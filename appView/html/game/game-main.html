@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rabbit Games - 메인</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function loadApp(appPath) {
+      document.getElementById("app-frame").src = appPath;
+    }
+  </script>
+</head>
+<body class="relative min-h-screen bg-[#0f172a] text-white font-sans flex flex-col">
+
+  <!-- 네비게이션 (좌측 고정) -->
+  <nav class="fixed top-0 left-0 h-full w-52 bg-blue-900 p-4 flex flex-col gap-4 z-20">
+    <h2 class="text-xl font-bold text-center mb-4 text-white">앱 목록</h2>
+
+    <!-- 개선된 버튼 -->
+    <button onclick="loadApp('test-app.html')"
+      class="flex items-center gap-3 w-full px-4 py-3 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 text-white hover:bg-white/20 hover:ring-2 hover:ring-cyan-400 transition-all duration-200 shadow-md text-left">
+      <span class="text-lg">🧪</span>
+      <span class="font-semibold text-sm">테스트 앱</span>
+    </button>
+
+    <!-- 추가 버튼 예시 -->
+    <button onclick="loadApp('another-app.html')"
+      class="flex items-center gap-3 w-full px-4 py-3 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 text-white hover:bg-white/20 hover:ring-2 hover:ring-cyan-400 transition-all duration-200 shadow-md text-left">
+      <span class="text-lg">🧩</span>
+      <span class="font-semibold text-sm">퍼즐 마스터</span>
+    </button>
+  </nav>
+
+  <!-- 헤더 -->
+  <header class="w-full flex justify-center mt-4 z-10">
+    <div class="w-11/12 sm:w-4/5 lg:w-3/5 bg-white/10 backdrop-blur-2xl p-4 rounded-xl shadow-xl border border-white/20 text-center">
+      <div class="flex justify-between items-center">
+        <div></div>
+        <div>
+          <h1 class="font-extrabold text-cyan-300 text-2xl sm:text-3xl">Rabbit Games</h1>
+          <p class="text-white text-sm">- rabbit's game warehouse -</p>
+        </div>
+        <button class="bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-400 hover:to-orange-300 text-white px-4 py-2 rounded-full shadow hover:scale-105 transition">
+          로그인
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 메인 콘텐츠 (중앙 정렬) -->
+  <main class="flex-grow w-full flex justify-center items-start mt-6 px-6">
+    <div class="w-full sm:w-4/5 lg:w-3/5 bg-[#1e293b] p-4 rounded-xl shadow border border-white/10">
+      <iframe id="app-frame" src="" class="w-full h-[70vh] rounded-lg bg-white shadow-inner border border-white/20"></iframe>
+    </div>
+  </main>
+
+  <!-- 푸터 -->
+  <footer class="text-center text-sm text-gray-400 py-4">
+    © 2025 Smart Rabbit's Studio. All rights reserved.
+  </footer>
+
+  <script>
+    function loadApp(appPath) {
+      document.getElementById("app-frame").src = appPath;
+    }
+  </script>
+</body>
+</html>

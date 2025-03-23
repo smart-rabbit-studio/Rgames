@@ -1,89 +1,98 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MSA 사용자 가이드</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="script.js"></script>
-    <style>
-        @keyframes floating {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-        @keyframes fade-in {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes cloud-move {
-            0% { transform: translateX(0); opacity: 0.4; }
-            50% { transform: translateX(30px) translateY(10px); opacity: 0.6; }
-            100% { transform: translateX(0); opacity: 0.4; }
-        }
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('background-pattern.svg');
-            background-size: cover;
-            opacity: 0.1;
-            z-index: -1;
-        }
-        .cloud {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.2);
-            filter: blur(40px);
-            border-radius: 50%;
-            animation: cloud-move 12s infinite linear;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rabbit Games</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/js/index.js" defer></script>
+  <link rel="stylesheet" href="/css/index.css">
 </head>
-<body class="min-h-screen flex flex-col bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 text-gray-100 font-sans relative overflow-hidden">
-    <div class="cloud w-[500px] h-[250px] top-10 left-5 animate-[cloud-move_15s_infinite]"></div>
-    <div class="cloud w-[600px] h-[300px] top-40 left-1/4 animate-[cloud-move_20s_infinite]"></div>
-    <div class="cloud w-[550px] h-[270px] bottom-10 right-10 animate-[cloud-move_25s_infinite]"></div>
-    
-    <!-- 헤더 영역 -->
-    <header class="w-3/4 mx-auto mt-8 flex items-center justify-between bg-white bg-opacity-20 backdrop-blur-2xl p-6 rounded-xl shadow-2xl border border-white/30 animate-fade-in">
-        <h1 class="text-4xl md:text-5xl font-extrabold tracking-wider text-white drop-shadow-lg">MSA 사용자 가이드</h1>
-        <button class="flex items-center gap-3 bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-400 hover:to-orange-300 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-all transform hover:scale-110 hover:shadow-xl" 
-            onclick="location.href='user/login.html'">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a5 5 0 11-4.546 7.032A7.002 7.002 0 003 14a7 7 0 107-7 5 5 0 010-10z" clip-rule="evenodd"></path></svg>
-            로그인
-        </button>
-    </header>
-    
-    <!-- 검색 영역 -->
-    <div class="w-3/4 mx-auto mt-4 mb-2 flex justify-center">
-        <input type="text" placeholder="앱 검색..." class="w-2/3 p-3 rounded-lg shadow-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-400 text-lg">
+<body class="min-h-screen flex flex-col bg-[#0f172a] text-gray-100 font-sans relative overflow-hidden">
+  <!-- 배경 요소 -->
+  <div class="absolute top-1/3 left-10 w-20 sm:w-24 h-20 sm:h-24 bg-cyan-300/10 rounded-full blur-2xl animate-bunny-float z-[-1]"></div>
+  <div class="absolute bottom-20 right-10 w-24 sm:w-28 h-24 sm:h-28 bg-pink-300/10 rounded-full blur-xl animate-bunny-float z-[-1]"></div>
+
+  <!-- 헤더 -->
+  <header class="relative w-11/12 sm:w-4/5 lg:w-3/5 mx-auto mt-4 bg-white/10 backdrop-blur-2xl p-4 rounded-xl shadow-2xl border border-white/20 text-center">
+    <div class="absolute top-3 right-3">
+      <button class="flex items-center gap-2 bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-400 hover:to-orange-300 text-white font-semibold py-2 px-4 sm:py-2.5 sm:px-5 rounded-full shadow-lg transition-transform hover:scale-110 text-[85%] sm:text-[95%] md:text-[100%]">
+        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 2a5 5 0 11-4.546 7.032A7.002 7.002 0 003 14a7 7 0 107-7 5 5 0 010-10z" clip-rule="evenodd"/>
+        </svg>
+        로그인
+      </button>
     </div>
-    
-    <!-- 앱 목록 섹션 (간격 조정) -->
-    <main class="flex flex-col items-center justify-center min-h-[calc(100vh-250px)] p-6 relative z-10 overflow-hidden">
-        <div class="w-full max-w-7xl min-h-[500px] p-8 bg-white bg-opacity-25 backdrop-blur-3xl rounded-3xl shadow-2xl border border-white/30 overflow-x-auto whitespace-nowrap scroll-smooth">
-            <div class="flex gap-8 p-4">
-                <div class="group w-48 h-48 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-xl flex flex-col items-center justify-center cursor-pointer transition-transform transform hover:scale-110 shadow-lg hover:shadow-2xl border border-white/30 animate-floating hover:animate-pulse">
-                    <div class="w-20 h-20 bg-white bg-opacity-90 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl">
-                        <img src="cloud_icon.png" alt="클라우드" class="w-14 animate-cloud-move">
-                    </div>
-                    <p class="text-xl mt-4 font-semibold text-white tracking-wide">클라우드</p>
+    <div class="flex flex-col items-center justify-center">
+      <h1 class="font-extrabold tracking-wider text-cyan-300 drop-shadow-lg text-[160%] sm:text-[180%] md:text-[200%]">Rabbit Games</h1>
+      <h3 class="mt-1 font-medium tracking-wide text-white drop-shadow-md text-[90%] sm:text-[100%] md:text-[110%]">- rabbit's game warehouse -</h3>
+    </div>
+  </header>
+
+  <!-- 검색 -->
+  <div class="w-11/12 sm:w-3/4 mx-auto mt-4 mb-4 flex justify-center">
+    <input id="search-input" type="text" placeholder="앱 검색..." class="w-full sm:w-2/3 p-3 rounded-lg shadow-md bg-white/90 text-gray-800 focus:outline-none focus:ring-2 focus:ring-pink-400 text-[90%] sm:text-[100%] md:text-[110%]" />
+    <button id="search-button" type="button" class="px-4 py-2 rounded-lg bg-pink-500 text-white font-semibold hover:bg-pink-400 shadow-md transition-all">
+      검색
+    </button>
+  </div>
+
+  <!-- 카테고리 버튼 -->
+  <nav class="w-full max-w-7xl mx-auto px-6 mb-6 flex flex-wrap gap-3 justify-center">
+    <button onclick="scrollToCategory('category-games')" class="bg-white/10 hover:bg-white/20 text-white text-sm px-4 py-2 rounded-full shadow-md backdrop-blur-md transition-all">🎮 게임</button>
+    <button onclick="scrollToCategory('category-tools')" class="bg-white/10 hover:bg-white/20 text-white text-sm px-4 py-2 rounded-full shadow-md backdrop-blur-md transition-all">🧰 도구</button>
+  </nav>
+
+  <!-- 앱 목록 -->
+  <main class="flex flex-col items-center justify-start flex-grow relative z-10 w-full px-6 overflow-hidden">
+    <div class="w-full max-w-7xl overflow-y-auto h-[calc(100vh-24rem)] pr-2 scroll-smooth">
+      <div class="flex flex-col gap-12 items-start justify-start">
+
+        <!-- 카테고리: games -->
+        <section id="category-games" class="w-full scroll-mt-24 bg-white/10 backdrop-blur-sm rounded-xl shadow border border-white/10 px-4 py-4">
+          <div class="flex items-center gap-2 mb-3 px-1 border-l-4 border-pink-400 pl-3">
+            <h2 class="text-xl sm:text-2xl font-bold text-white">🎮 게임</h2>
+          </div>
+          <div class="relative h-[10rem] group">
+            <button onclick="scrollApps('games', -1)" class="scroll-button left-0">←</button>
+            <button onclick="scrollApps('games', 1)" class="scroll-button right-0">→</button>
+            <div class="overflow-hidden">
+              <div id="games" class="flex overflow-x-auto h-full scroll-smooth gap-4 px-4 pb-2">
+                <!-- 앱 카드들 추가 -->
+                <div class="min-w-[7rem] sm:min-w-[8rem] md:min-w-[9rem] aspect-square bg-gradient-to-br from-indigo-400 to-purple-600 rounded-xl flex flex-col items-center justify-center cursor-pointer transition-transform hover:scale-105 shadow-lg border border-white/30 animate-[floating_3s_infinite]">
+                  <div class="w-[70%] aspect-square bg-white bg-opacity-90 rounded-xl flex items-center justify-center shadow-lg mt-[6%]">
+                  <img src="calculator_icon.png" alt="데이터베이스" class="w-[60%]" />
+                  </div>
+                  <p class="mt-2 font-semibold text-white tracking-wide text-[85%]">데이터베이스</p>
                 </div>
-                <div class="group w-48 h-48 bg-gradient-to-br from-green-400 to-teal-600 rounded-xl flex flex-col items-center justify-center cursor-pointer transition-transform transform hover:scale-110 shadow-lg hover:shadow-2xl border border-white/30 animate-floating hover:animate-pulse">
-                    <div class="w-20 h-20 bg-white bg-opacity-90 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl">
-                        <img src="database_icon.png" alt="데이터베이스" class="w-14 animate-cloud-move">
-                    </div>
-                    <p class="text-xl mt-4 font-semibold text-white tracking-wide">데이터베이스</p>
-                </div>
+              </div>
             </div>
-        </div>
-    </main>
-    
-    <!-- 푸터 -->
-    <footer class="w-full bg-opacity-20 backdrop-blur-xl text-center py-4 text-gray-300 text-sm mt-auto">
-        Ⓒ 2025 Smart Rabbit's Studio. All rights reserved.
-    </footer>
+          </div>
+        </section>
+
+        <section id="category-tools" class="w-full scroll-mt-24 bg-white/10 backdrop-blur-sm rounded-xl shadow border border-white/10 px-4 py-4">
+          <div class="flex items-center gap-2 mb-3 px-1 border-l-4 border-pink-400 pl-3">
+            <h2 class="text-xl sm:text-2xl font-bold text-white">🧰 도구</h2>
+          </div>
+          <div class="relative h-[10rem] group">
+            <button onclick="scrollApps('games', -1)" class="scroll-button left-0">←</button>
+            <button onclick="scrollApps('games', 1)" class="scroll-button right-0">→</button>
+            <div class="overflow-hidden">
+              <div id="games" class="flex overflow-x-auto h-full scroll-smooth gap-4 px-4 pb-2">
+                <!-- 앱 카드들 추가 -->
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="w-full text-center py-4 text-gray-300 text-[80%]">
+    © 2025 Smart Rabbit's Studio. All rights reserved.
+  </footer>
 </body>
 </html>
