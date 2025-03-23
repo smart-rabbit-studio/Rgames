@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSA 사용자 가이드</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="script.js"></script>
+    <style>
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes cloud-move {
+            0% { transform: translateX(0); opacity: 0.4; }
+            50% { transform: translateX(30px) translateY(10px); opacity: 0.6; }
+            100% { transform: translateX(0); opacity: 0.4; }
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('background-pattern.svg');
+            background-size: cover;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        .cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            filter: blur(40px);
+            border-radius: 50%;
+            animation: cloud-move 12s infinite linear;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 text-gray-100 font-sans relative overflow-hidden">
+    <div class="cloud w-[500px] h-[250px] top-10 left-5 animate-[cloud-move_15s_infinite]"></div>
+    <div class="cloud w-[600px] h-[300px] top-40 left-1/4 animate-[cloud-move_20s_infinite]"></div>
+    <div class="cloud w-[550px] h-[270px] bottom-10 right-10 animate-[cloud-move_25s_infinite]"></div>
+    
+    <!-- 헤더 영역 -->
+    <header class="w-3/4 mx-auto mt-8 flex items-center justify-between bg-white bg-opacity-20 backdrop-blur-2xl p-6 rounded-xl shadow-2xl border border-white/30 animate-fade-in">
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-wider text-white drop-shadow-lg">MSA 사용자 가이드</h1>
+        <button class="flex items-center gap-3 bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-400 hover:to-orange-300 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-all transform hover:scale-110 hover:shadow-xl" 
+            onclick="location.href='user/login.html'">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a5 5 0 11-4.546 7.032A7.002 7.002 0 003 14a7 7 0 107-7 5 5 0 010-10z" clip-rule="evenodd"></path></svg>
+            로그인
+        </button>
+    </header>
+    
+    <!-- 검색 영역 -->
+    <div class="w-3/4 mx-auto mt-4 mb-2 flex justify-center">
+        <input type="text" placeholder="앱 검색..." class="w-2/3 p-3 rounded-lg shadow-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-400 text-lg">
+    </div>
+    
+    <!-- 앱 목록 섹션 (간격 조정) -->
+    <main class="flex flex-col items-center justify-center min-h-[calc(100vh-250px)] p-6 relative z-10 overflow-hidden">
+        <div class="w-full max-w-7xl min-h-[500px] p-8 bg-white bg-opacity-25 backdrop-blur-3xl rounded-3xl shadow-2xl border border-white/30 overflow-x-auto whitespace-nowrap scroll-smooth">
+            <div class="flex gap-8 p-4">
+                <div class="group w-48 h-48 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-xl flex flex-col items-center justify-center cursor-pointer transition-transform transform hover:scale-110 shadow-lg hover:shadow-2xl border border-white/30 animate-floating hover:animate-pulse">
+                    <div class="w-20 h-20 bg-white bg-opacity-90 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl">
+                        <img src="cloud_icon.png" alt="클라우드" class="w-14 animate-cloud-move">
+                    </div>
+                    <p class="text-xl mt-4 font-semibold text-white tracking-wide">클라우드</p>
+                </div>
+                <div class="group w-48 h-48 bg-gradient-to-br from-green-400 to-teal-600 rounded-xl flex flex-col items-center justify-center cursor-pointer transition-transform transform hover:scale-110 shadow-lg hover:shadow-2xl border border-white/30 animate-floating hover:animate-pulse">
+                    <div class="w-20 h-20 bg-white bg-opacity-90 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl">
+                        <img src="database_icon.png" alt="데이터베이스" class="w-14 animate-cloud-move">
+                    </div>
+                    <p class="text-xl mt-4 font-semibold text-white tracking-wide">데이터베이스</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- 푸터 -->
+    <footer class="w-full bg-opacity-20 backdrop-blur-xl text-center py-4 text-gray-300 text-sm mt-auto">
+        Ⓒ 2025 Smart Rabbit's Studio. All rights reserved.
+    </footer>
+</body>
+</html>
