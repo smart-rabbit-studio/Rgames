@@ -60,17 +60,19 @@
             <div class="overflow-hidden">
               <div id="games" class="flex overflow-x-auto h-full scroll-smooth gap-4 px-4 pb-2">
                 <!-- 앱 카드들 추가 -->
-                <div class="min-w-[7rem] sm:min-w-[8rem] md:min-w-[9rem] aspect-square bg-gradient-to-br from-indigo-400 to-purple-600 rounded-xl flex flex-col items-center justify-center cursor-pointer transition-transform hover:scale-105 shadow-lg border border-white/30 animate-[floating_3s_infinite]">
+                <div onclick="openApp('game', '미연시')" class="min-w-[7rem] sm:min-w-[8rem] md:min-w-[9rem] aspect-square bg-gradient-to-br from-indigo-400 to-purple-600 rounded-xl flex flex-col items-center justify-center cursor-pointer transition-transform hover:scale-105 shadow-lg border border-white/30 animate-[floating_3s_infinite]">
                   <div class="w-[70%] aspect-square bg-white bg-opacity-90 rounded-xl flex items-center justify-center shadow-lg mt-[6%]">
-                  <img src="calculator_icon.png" alt="데이터베이스" class="w-[60%]" />
+                  <img src="calculator_icon.png" class="w-[60%]" />
                   </div>
-                  <p class="mt-2 font-semibold text-white tracking-wide text-[85%]">데이터베이스</p>
+                  <p class="mt-2 font-semibold text-white tracking-wide text-[85%]">미연시</p>
                 </div>
+                
               </div>
             </div>
           </div>
         </section>
 
+        <!-- 카테고리: tools -->
         <section id="category-tools" class="w-full scroll-mt-24 bg-white/10 backdrop-blur-sm rounded-xl shadow border border-white/10 px-4 py-4">
           <div class="flex items-center gap-2 mb-3 px-1 border-l-4 border-pink-400 pl-3">
             <h2 class="text-xl sm:text-2xl font-bold text-white">🧰 도구</h2>

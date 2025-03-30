@@ -87,6 +87,11 @@ function scrollToApp(containerId, appName) {
   }
 }
 
+function openApp(category, appName) {
+  const encodedApp = encodeURIComponent(appName);
+  location.href = `/html/category/${category}.html?app=${encodedApp}`;
+}
+
 // 이벤트 등록
 document.addEventListener("DOMContentLoaded", () => {
   const input = document.getElementById("search-input");

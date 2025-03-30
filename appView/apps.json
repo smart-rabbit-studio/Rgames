@@ -1,7 +1,10 @@
 {
-    "games": [
-      { "id": "games", "name": "데이터베이스" }
-    ],
-    "tools": [
-    ]
+  "games": [
+    { "id": "games", "name": "미연시", "path": "/html/games/test1.html" },
+    { "id": "games", "name": "타이머", "path": "/html/games/test2.html" }
+  ],
+  "tools": [
+    { "id": "tools", "name": "메모장", "path": "/html/games/test3.html" },
+    { "id": "games", "name": "타이머", "path": "/html/games/test4.html" }
+  ]
 }
