@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rabbit Games</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/js/main_page.js" defer></script>
+  <link rel="stylesheet" href="/css/main_page.css">
+</head>
+<body class="min-h-screen flex flex-col bg-[#0f172a] text-gray-100 font-sans relative overflow-hidden">
+  <!-- 배경 요소 -->
+  <div class="absolute top-1/3 left-10 w-20 sm:w-24 h-20 sm:h-24 bg-cyan-300/10 rounded-full blur-2xl animate-bunny-float z-[-1]"></div>
+  <div class="absolute bottom-20 right-10 w-24 sm:w-28 h-24 sm:h-28 bg-pink-300/10 rounded-full blur-xl animate-bunny-float z-[-1]"></div>
+
+  <!-- 헤더 -->
+  <header class="relative w-11/12 sm:w-4/5 lg:w-3/5 mx-auto mt-4 bg-white/10 backdrop-blur-2xl p-4 rounded-xl shadow-2xl border border-white/20 text-center">
+    <div class="absolute top-3 right-3">
+      <button class="flex items-center gap-2 bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-400 hover:to-orange-300 text-white font-semibold py-2 px-4 sm:py-2.5 sm:px-5 rounded-full shadow-lg transition-transform hover:scale-110 text-[85%] sm:text-[95%] md:text-[100%]">
+        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 2a5 5 0 11-4.546 7.032A7.002 7.002 0 003 14a7 7 0 107-7 5 5 0 010-10z" clip-rule="evenodd"/>
+        </svg>
+        로그인
+      </button>
+    </div>
+    <div class="flex flex-col items-center justify-center">
+      <h1 class="font-extrabold tracking-wider text-cyan-300 drop-shadow-lg text-[160%] sm:text-[180%] md:text-[200%]">Rabbit Games</h1>
+      <h3 class="mt-1 font-medium tracking-wide text-white drop-shadow-md text-[90%] sm:text-[100%] md:text-[110%]">- rabbit's game warehouse -</h3>
+    </div>
+  </header>
+
+  <!-- 검색 -->
+  <div class="w-11/12 sm:w-3/4 mx-auto mt-4 mb-4 flex justify-center">
+    <input id="search-input" type="text" placeholder="앱 검색..." class="w-full sm:w-2/3 p-3 rounded-lg shadow-md bg-white/90 text-gray-800 focus:outline-none focus:ring-2 focus:ring-pink-400 text-[90%] sm:text-[100%] md:text-[110%]" />
+    <button id="search-button" type="button" class="px-4 py-2 rounded-lg bg-pink-500 text-white font-semibold hover:bg-pink-400 shadow-md transition-all">
+      검색
+    </button>
+  </div>
+
+  <!-- 카테고리 섹션 -->
+  <main class="flex flex-col items-center justify-start flex-grow relative z-10 w-full px-6 overflow-hidden">
+    <div class="w-full max-w-7xl overflow-y-auto h-[calc(100vh-24rem)] pr-2 scroll-smooth">
+      <div id="category-container" class="flex flex-col gap-12 items-start justify-start">
+        <!-- apps.json 기반으로 섹션 자동 삽입됨 -->
+      </div>
+    </div>
+  </main>
+
+  <footer class="w-full text-center py-4 text-gray-300 text-[80%]">
+    © 2025 Smart Rabbit's Studio. All rights reserved.
+  </footer>
+</body>
+</html>

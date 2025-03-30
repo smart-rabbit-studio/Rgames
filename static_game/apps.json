@@ -1,0 +1,50 @@
+{
+    "games": [
+      {
+        "id": "games",
+        "name": "미연시",
+        "icon": "/icons/games/miyunshi.png",
+        "description": "연애 시뮬레이션 게임",
+        "path": "/games/미연시.html"
+      },
+      {
+        "id": "games",
+        "name": "슈팅게임",
+        "icon": "/icons/shooter.png",
+        "description": "클래식 아케이드 슈팅",
+        "path": "/games/슈팅게임.html"
+      }
+    ],
+    "tools": [
+      {
+        "id": "tools",
+        "name": "메모장",
+        "icon": "/icons/memo.png",
+        "description": "간단한 메모 앱",
+        "path": "/games/메모장.html"
+      },
+      {
+        "id": "tools",
+        "name": "계산기",
+        "icon": "/icons/calculator.png",
+        "description": "기초 사칙연산 계산기",
+        "path": "/games/계산기.html"
+      }
+    ],
+    "test": [
+      {
+        "id": "test",
+        "name": "테스트앱",
+        "icon": "/icons/test.png",
+        "description": "테스트용 앱",
+        "path": "/games/test.html"
+      },
+      {
+        "id": "test",
+        "name": "테스트앱2",
+        "icon": "/icons/test2.png",
+        "description": "테스트용2 앱",
+        "path": "/games/test2.html"
+      }
+    ]
+  }
